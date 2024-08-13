@@ -295,7 +295,7 @@ public class Parser {
 
     public static void main(String[] args) {
         try {
-            String input = new String(Files.readAllBytes(Paths.get("src/test.zd")));
+            String input = new String(Files.readAllBytes(Paths.get((args.length > 0 && args[0] != null) ? args[0] : "src/test.zd";)));
             Lexer lexer = new Lexer(input);
             List<Token> tokens = lexer.tokenize();
             Parser parser = new Parser(tokens);
