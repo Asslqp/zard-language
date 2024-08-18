@@ -30,9 +30,12 @@ public class Lexer {
 
     private void skipCommment()
     {
-        while (currentChar != '\0' && currentChar != '\n') {
+        if(currentChar == '#'){
+         while (currentChar != '\0' && currentChar != '\n') {
             advance();
+         }
         }
+        advance();
     }
     private void skipWhitespace() {
         while (currentChar != '\0') {
